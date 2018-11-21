@@ -6,9 +6,18 @@ class DialogInput extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      inputModal: props.value || ''
+      inputModal: props.startValue || ''
     }
   }
+	
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.startValue !== this.props.startValue) {
+      this.setState({
+        inputModal: nextProps.startValue
+      });
+    }
+  }	
+
   render(){
     let title = this.props.title || '';
     let hintInput = this.props.hintInput || '';
