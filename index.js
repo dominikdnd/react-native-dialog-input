@@ -43,7 +43,7 @@ class DialogInput extends React.Component{
                 underlineColorAndroid='transparent'
                 placeholder={hintInput}
                 onChangeText={(inputModal) => this.setState({inputModal})}
-		value={this.state.inputModal}
+		value={this.state.inputModal || this.props.value}
                 />
             </View>
             <View style={styles.btn_container}>
